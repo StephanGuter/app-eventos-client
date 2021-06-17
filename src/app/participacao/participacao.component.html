@@ -15,7 +15,7 @@
       <tr *ngFor="let evento of this.listaParticipacao, index as i">
         <td>{{this.evento.nome}}</td>
         <td>{{this.evento.endereco}}</td>
-        <td>{{this.eventoService.getData(this.evento.data)}}</td> 
+        <td>{{this.eventoService.getData(this.evento.data)}}</td>
         <td>{{this.eventoService.getHorario(this.evento.data)}}</td>
         <td>
           <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details" title="Ver evento em detalhes">visibility</i></button>

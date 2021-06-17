@@ -7,7 +7,7 @@
     <p><span>Data: </span><span>{{ this.eventoService.getData(this.evento.data) }}</span></p>
     <p><span>Horário: </span><span>{{ this.eventoService.getHorario(this.evento.data) }}</span></p>
   </div>
-  
+
   <table *ngIf="this.listaConvidados.length > 0" class="table">
     <thead class="table-dark">
       <tr>
@@ -26,8 +26,7 @@
       </tr>
     </tbody>
   </table>
-
+  <h3 *ngIf="this.listaConvidados.length == 0">Este evento ainda não tem nenhum convidado.</h3>
   <button *ngIf="!this.participando" (click)="this.participar()">Participar</button>
   <button (click)="this.voltar()">Voltar</button>
 </div>
-<h3 *ngIf="this.listaConvidados.length == 0">Este evento ainda não tem nenhum convidado.</h3>
