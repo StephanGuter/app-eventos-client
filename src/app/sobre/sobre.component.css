@@ -1,0 +1,15 @@
+h3{
+  font-weight: 700;
+}
+
+th{
+  border-bottom: 1px solid black;
+}
+
+td, th{
+  padding: 10px;
+}
+
+table{
+  margin-left: 6px;
+}

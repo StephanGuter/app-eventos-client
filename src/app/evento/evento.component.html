@@ -27,5 +27,6 @@
     </tbody>
   </table>
 
+  <button *ngIf="!this.participando" (click)="this.participar()">Participar</button>
   <button (click)="this.voltar()">Voltar</button>
 </div>
