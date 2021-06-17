@@ -30,3 +30,4 @@
   <button *ngIf="!this.participando" (click)="this.participar()">Participar</button>
   <button (click)="this.voltar()">Voltar</button>
 </div>
+<h3 *ngIf="this.listaConvidados.length == 0">Este evento ainda não tem nenhum convidado.</h3>

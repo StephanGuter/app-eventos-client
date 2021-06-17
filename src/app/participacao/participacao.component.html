@@ -1,7 +1,7 @@
 <div class='container-fluid'>
   <h2>Minhas participações</h2>
 
-  <table class="table">
+  <table *ngIf="this.listaParticipacao.length > 0" class="table">
     <thead>
       <tr>
         <th>Nome</th>
@@ -18,10 +18,11 @@
         <td>{{this.eventoService.getData(this.evento.data)}}</td> 
         <td>{{this.eventoService.getHorario(this.evento.data)}}</td>
         <td>
-          <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details">visibility</i>Ver</button>
-          <button class="acoes" (click)="desistir(i)"><i class="material-icons" id="delete">delete</i></button>
+          <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details" title="Ver evento em detalhes">visibility</i></button>
+          <button class="acoes" (click)="desistir(i)"><i class="material-icons" id="delete" title="Desistir do evento">delete</i></button>
         </td>
       </tr>
     </tbody>
   </table>
+  <h3 *ngIf="this.listaParticipacao.length == 0" class="table">Você não está participando de nenhum evento!</h3>
 </div>

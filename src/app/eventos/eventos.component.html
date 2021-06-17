@@ -18,12 +18,12 @@
         <td>{{this.eventoService.getData(this.evento.data)}}</td> 
         <td>{{this.eventoService.getHorario(this.evento.data)}}</td>
         <td>
-          <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details">visibility</i></button>
-          <button *ngIf="this.auth.authInfo.isAdmin" class="acoes" (click)="abrirFormularioEvento('editar', i)"><i class="material-icons" id="edit">edit</i></button>
-          <button *ngIf="this.auth.authInfo.isAdmin" class="acoes" (click)="deletar(i)"><i class="material-icons" id="delete">delete</i></button>
+          <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details" title="Ver evento em detalhes">visibility</i></button>
+          <button *ngIf="this.auth.authInfo.isAdmin" class="acoes" (click)="abrirFormularioEvento('editar', i)"><i class="material-icons" id="edit" title="Editar evento">edit</i></button>
+          <button *ngIf="this.auth.authInfo.isAdmin" class="acoes" (click)="deletar(i)"><i class="material-icons" id="delete" title="Excluir evento">delete</i></button>
         </td>
       </tr>
     </tbody>
   </table>
-  <button mat-raised-button id="event" (click)="abrirFormularioEvento('criar')">Criar novo evento</button>
+  <button *ngIf="this.auth.authInfo.isAdmin" mat-raised-button id="event" (click)="abrirFormularioEvento('criar')">Criar novo evento</button>
 </div>

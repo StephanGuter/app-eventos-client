@@ -63,6 +63,7 @@ export class ParticipacaoComponent implements OnInit {
           showConfirmButton: false,
           timer: 2000
         });
+        this.router.navigate(['/branco']);
       }, 
       err => {
         Swal.fire({
