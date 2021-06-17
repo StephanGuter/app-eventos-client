@@ -6,8 +6,8 @@ import Swal from 'sweetalert2';
 
 @Injectable()
 export class AuthenticationService {
-  //readonly apiURL = 'https://fatec-api-eventos.herokuapp.com';
-  readonly apiURL = 'http://localhost:8090';
+  readonly apiURL = 'https://fatec-api-eventos.herokuapp.com';
+  //readonly apiURL = 'http://localhost:8090';
 
   private timer: any;
 
