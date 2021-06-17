@@ -1,4 +1,4 @@
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { AuthenticationService } from './authentication.service';
 import { Acao, Convidado, ConvidadoDTO, Evento } from './Entities';
@@ -157,7 +157,46 @@ export class EventoService {
     return promise;
   }
 
-  createConvidado(convidado: ConvidadoDTO) {
+  createConvidado(convidado: Convidado) {
+    let nome = convidado.nome;
+    let cpf = convidado.cpf;
+    let telefone = convidado.telefone;
+    let login = convidado.login;
+    let senha = convidado.senha;
+    let perfis = [2];
+
+    let reqBody: string = JSON.stringify({
+      nome,
+      cpf,
+      telefone,
+      login,
+      senha,
+      perfis
+    });
+
+    const myHeader = new HttpHeaders()
+      .set('Content-Type', 'application/json');
+
+    const promise = this.http.post(
+      this.auth.apiURL + '/convidado',
+      reqBody,
+      {
+        observe: 'response',
+        responseType: 'json',
+        headers: myHeader
+      }
+    ).toPromise();
+
+    promise.then(suc => {
+      this.status = suc.status;
+    }).catch(err => {
+      this.error = err.error.message;
+      this.statusText = err.error.error;
+    });
+    return promise;
+  }
+
+  createConvidadoDTO(convidado: ConvidadoDTO) {
     let nome = convidado.nome;
     let cpf = convidado.cpf;
     let telefone = convidado.telefone;

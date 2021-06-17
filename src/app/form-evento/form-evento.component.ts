@@ -94,7 +94,7 @@ export class FormEventoComponent implements OnInit {
         perfis
       );
       
-      this.eventoService.createConvidado(convidadoNovo).then(
+      this.eventoService.createConvidadoDTO(convidadoNovo).then(
         suc => {
           this.listaConvidados.push(convidadoNovo);
         }, 

@@ -9,8 +9,6 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { RouterModule } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
-
-
 import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 import { AuthenticationService } from './authentication.service';
@@ -25,6 +23,7 @@ import { EventosComponent } from './eventos/eventos.component';
 import { EventoComponent } from './evento/evento.component';
 import { FormEventoComponent } from './form-evento/form-evento.component';
 import { TimerService } from './timer.service';
+import { CadastroComponent } from './cadastro/cadastro.component';
 
 @NgModule({
   imports: [
@@ -40,11 +39,12 @@ import { TimerService } from './timer.service';
       { path: 'evento', component: EventoComponent },
       { path: 'form-evento', component: FormEventoComponent },
       { path: 'sobre', component: SobreComponent },
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'cadastro', component: CadastroComponent }
     ])
   ],
   entryComponents: [ ],
-  declarations: [ AppComponent, HomeComponent, MenuComponent, SobreComponent, EventosComponent, LoginComponent, EventoComponent, FormEventoComponent ],
+  declarations: [ AppComponent, HomeComponent, MenuComponent, SobreComponent, EventosComponent, LoginComponent, EventoComponent, FormEventoComponent, CadastroComponent ],
   bootstrap: [ AppComponent ],
   providers: [ EventoService, AuthenticationService, TimerService ]
 })

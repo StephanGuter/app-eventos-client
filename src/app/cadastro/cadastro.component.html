@@ -1,0 +1,27 @@
+<div class="evento container-fluid">
+  <h2>Cadastrar-se</h2>
+  <form action="#" name="form-convidado" id="form-convidado" class="formulario">
+
+    <label for="nome">Nome</label>
+    <input type="text" name="nome" id="nome" placeholder="Convidado" [(ngModel)]="nome">
+
+    <label for="cpf">CPF</label>
+    <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" [(ngModel)]="cpf">
+
+    <label for="telefone">Telefone</label>
+    <input type="text" name="telefone" id="telefone" placeholder="(00)90000-0000" [(ngModel)]="telefone">
+
+    <label for="login">E-mail (login)</label>
+    <input type="text" name="login" id="login" placeholder="nome@exemplo.com" [(ngModel)]="login">
+
+    <label for="senha">Senha</label>
+    <input type="password" name="senha" id="senha" [(ngModel)]="senha">
+
+    <label for="rSenha">Repetir senha</label>
+    <input type="password" name="rSenha" id="rSenha" [(ngModel)]="rSenha">
+  </form>
+  <div>
+    <button id="cadastrar" (click)="this.cadastrar()" >Cadastrar</button>
+    <button id="voltar" [routerLink]="['/login']">Voltar</button>
+  </div>
+</div>

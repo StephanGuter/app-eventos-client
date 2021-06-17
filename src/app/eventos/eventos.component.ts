@@ -27,7 +27,7 @@ export class EventosComponent implements OnInit {
 
   abrirEvento(index: number) {
     this.eventoService.indiceEvento = index;
-    this.router.navigate(['evento']);
+    this.router.navigate(['/evento']);
   }
 
   abrirFormularioEvento(acao: string, index?: number) {
@@ -83,9 +83,9 @@ export class EventosComponent implements OnInit {
               }
             );
           }
-          this.redirectTo('eventos');
+          this.redirectTo('/eventos');
         });
-        this.router.navigate(['evento']);
+        this.router.navigate(['/evento']);
       }
   }
 
