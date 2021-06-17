@@ -23,7 +23,6 @@ import { LoginComponent } from './login/login.component';
 import { EventosComponent } from './eventos/eventos.component';
 import { EventoComponent } from './evento/evento.component';
 import { FormEventoComponent } from './form-evento/form-evento.component';
-import { TimerService } from './timer.service';
 import { CadastroComponent } from './cadastro/cadastro.component';
 import { ParticipacaoComponent } from './participacao/participacao.component';
 
@@ -51,7 +50,7 @@ import { ParticipacaoComponent } from './participacao/participacao.component';
   entryComponents: [ ],
   declarations: [ AppComponent, BrancoComponent, HomeComponent, MenuComponent, SobreComponent, EventosComponent, LoginComponent, EventoComponent, FormEventoComponent, CadastroComponent, ParticipacaoComponent ],
   bootstrap: [ AppComponent ],
-  providers: [ EventoService, AuthenticationService, TimerService ]
+  providers: [ EventoService, AuthenticationService ]
 })
 export class AppModule {}
 

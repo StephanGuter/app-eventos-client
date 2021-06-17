@@ -1,7 +1,6 @@
 import { Component, VERSION } from '@angular/core';
 import { Router } from '@angular/router';
 import { AuthenticationService } from './authentication.service';
-import { TimerService } from './timer.service';
 
 @Component({
   selector: 'my-app',
@@ -11,9 +10,8 @@ import { TimerService } from './timer.service';
 export class AppComponent  {
   constructor(
     public router: Router,
-    public auth: AuthenticationService,
-    private timer: TimerService
+    public auth: AuthenticationService
   ) { 
-    this.timer.start();
+    this.auth.startTimer();
   }
 }

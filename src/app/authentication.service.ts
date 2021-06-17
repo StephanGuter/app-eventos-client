@@ -25,7 +25,6 @@ export class AuthenticationService {
       this.setHeaders();
       this.logged = true;
     }
-    this.dataJsonToDate(new Date());
   }
 
   private setHeaders() {
@@ -46,7 +45,6 @@ export class AuthenticationService {
      parseInt(dataJson.toString().substr(17,2)),
      parseInt(dataJson.toString().substr(20,3))
    );
-   console.log("Minha data: " + dataRecuperada);
    return dataRecuperada;
   }
 
