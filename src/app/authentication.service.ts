@@ -63,9 +63,9 @@ export class AuthenticationService {
           
           console.log("Sinal: " + tempoDecorridoAutenticacao);
           
-          if (tempoDecorridoAutenticacao > 240000/20) {
+          if (tempoDecorridoAutenticacao > 240000) {
             this.stopTimer();
-            if (tempoDecorridoAutenticacao > 290000/20) {
+            if (tempoDecorridoAutenticacao > 290000) {
               Swal.fire({
                 title: 'Sua sessão expirou!',
                 text: 'Faça login novamente.',
