@@ -81,7 +81,7 @@ export class AuthInfo {
   usuario: ConvidadoDTO;
   token: string;
   isAdmin: Boolean;
-  data: Date;
+  data: string;
 
   constructor() {}
 }
