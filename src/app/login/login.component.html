@@ -1,0 +1,9 @@
+<div class="box">
+  <h1>Login</h1>
+  <form action="#" method="POST">
+    <input type="text" name="usuario" id="usuario" placeholder="Usuário" [(ngModel)]="login">
+    <input type="password" name="senha" id="senha" placeholder="Senha" [(ngModel)]="senha">
+    <button (click)="authenticar()">Logar</button>
+    <p class="error" *ngIf="this.auth.error">{{this.auth.error}}</p>
+  </form>
+</div>

@@ -1,0 +1,21 @@
+<header>
+  <a [routerLink]="['']">Início</a>
+  <nav>
+    <ul>
+      <span class="button"><i class="material-icons">account_circle</i></span>
+      <li *ngIf="this.auth.logged">
+
+        <span>{{this.auth.authInfo.usuario.nome}}</span>
+        <span *ngIf="this.auth.authInfo.isAdmin">(Admin)</span>
+      </li>
+      <li><a [routerLink]="['eventos']">Eventos</a></li>
+      <li><a [routerLink]="['sobre']">Sobre</a></li>
+      <li *ngIf="this.auth.logged">
+        <a (click)="this.auth.logout()" [routerLink]="['/']">Sair</a>
+      </li>
+      <li *ngIf="!this.auth.logged">
+        <a [routerLink]="['/']">Entrar</a>
+      </li>
+    </ul>
+  </nav>
+</header>

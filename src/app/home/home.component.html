@@ -1,0 +1,29 @@
+<div *ngIf="!this.auth.logged" class="login">
+    <app-login></app-login>
+</div>
+<div class='container-fluid' *ngIf="this.auth.logged">
+
+  <div *ngIf="this.auth.logged"  class="inicio">
+    <h2>Olá, {{this.auth.authInfo.usuario.nome}}!</h2>
+
+    <div class="form">
+      <h3>Pesquisar eventos</h3>
+
+      <label for="search">Pesquise por termo relacionado ao evento</label>
+
+      <div>
+
+      <input type="search" id="search" placeholder="Digite aqui"  [(ngModel)]="searchText">
+      <span id="icon"><i class="material-icons">search</i></span>
+
+      </div>
+
+      <div id="event" *ngFor=" let evento of this.eventoService.eventos | filter:searchText , index as i ">
+
+        <h4><a (click)="this.abrirEvento(i)"  [title]="' Ver detalhes de ' + evento.nome">{{evento.nome}}</a></h4>
+
+        <p>Local: {{evento.endereco}}</p>
+      </div>
+    </div>
+  </div>
+</div>

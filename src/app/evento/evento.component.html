@@ -1,0 +1,31 @@
+<div class='container-fluid'>
+  <h2>{{this.evento.nome}}</h2>
+
+  <div>
+    <p><span>Local: </span><span>{{evento.endereco}}</span></p>
+    <p><span>Descrição: </span><span>{{evento.descricao}}</span></p>
+    <p><span>Data: </span><span>{{ this.eventoService.getData(this.evento.data) }}</span></p>
+    <p><span>Horário: </span><span>{{ this.eventoService.getHorario(this.evento.data) }}</span></p>
+  </div>
+  
+  <table *ngIf="this.listaConvidados.length > 0" class="table">
+    <thead class="table-dark">
+      <tr>
+        <th>Nome</th>
+        <th>CPF</th>
+        <th>Telefone</th>
+        <th>E-mail</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let convidado of this.listaConvidados, index as i">
+        <td>{{convidado.nome}}</td>
+        <td>{{convidado.cpf}}</td>
+        <td>{{convidado.telefone}}</td>
+        <td>{{convidado.login}}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <button (click)="this.voltar()">Voltar</button>
+</div>

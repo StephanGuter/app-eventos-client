@@ -1,0 +1,77 @@
+<div class="evento container-fluid">
+  <h2>Criar novo evento</h2>
+  <form action="#" name="form-evento" id="form-evento" class="formulario">
+
+    <label for="nome-evento">Nome</label>
+    <input type="text" name="nome-evento" id="nome-evento" placeholder="Evento" [(ngModel)]="nomeEvento">
+
+    <label for="endereco">Endereço</label>
+    <input type="text" name="endereco" id="endereco" placeholder="Local do evento" [(ngModel)]="endereco">
+    
+    <label for="descricao">Descrição</label>
+    <textarea name="comment" form="form-evento" name="descricao" id="descricao" placeholder="Fale sobre o evento." [(ngModel)]="descricao"></textarea>
+
+    <label for="data">Data</label>
+    <input type="date" name="data" id="data" [(ngModel)]="d">
+
+    <label for="hora">Hora</label>
+    <input type="time" name="hora" id="hora" [(ngModel)]="h">
+  </form>
+
+  <button *ngIf="!this.gerenciandoConvidado" (click)="this.adicionarConvidado()">Adicionar Convidado</button>
+
+  <div class="convidados" *ngIf="this.listaConvidados.length > 0 || this.gerenciandoConvidado">
+
+    <div *ngIf="this.gerenciandoConvidado" class="gerenciamento">
+    
+      <form action="#" name="form-convidado" id="form-convidado" class="formulario">
+
+        <label for="nome-convidado">Nome</label>
+        <input type="text" name="nome-convidado" id="nome-convidado" placeholder="Convidado" [(ngModel)]="nomeConvidado">
+
+        <label for="cpf">CPF</label>
+        <input type="text" name="cpf" id="cpf" placeholder="000.000.000-00" [(ngModel)]="cpf">
+
+        <label for="telefone">Telefone</label>
+        <input type="text" name="telefone" id="telefone" placeholder="(00)90000-0000" [(ngModel)]="telefone">
+
+        <label for="login">E-mail</label>
+        <input type="text" name="login" id="login" placeholder="nome@exemplo.com" [(ngModel)]="login">
+      </form>
+
+      <button (click)="this.gravarConvidado()">Gravar</button>
+      <button (click)="this.cancelar()" >Cancelar</button>
+    </div>
+    
+    <div class="lista" *ngIf="this.listaConvidados.length > 0">
+      <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th>Nome</th>
+            <th>CPF</th>
+            <th>Telefone</th>
+            <th>E-mail</th>
+            <th>Ações</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let convidado of this.listaConvidados, index as i">
+            <td>{{convidado.nome}}</td>
+            <td>{{convidado.cpf}}</td>
+            <td>{{convidado.telefone}}</td>
+            <td>{{convidado.login}}</td>
+            <td>
+              <button id="edit" (click)="this.editarConvidado(i)" class="acoes"><i class="material-icons" id="edit">edit</i></button>
+              <button id="delete" (click)="this.removerConvidado(i)" class="acoes"><i class="material-icons" id="delete">delete</i></button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <div>
+    <button *ngIf="this.criando()" (click)="this.criarEvento()">Criar evento</button>
+    <button *ngIf="this.atualizando()" (click)="this.atualizarEvento()">Atualizar evento</button>
+    <button id="back" (click)="this.voltar()">Voltar</button>
+  </div>
+</div>

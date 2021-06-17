@@ -1,0 +1,65 @@
+.formulario {
+  box-sizing: border-box;
+  padding: 20px;
+  margin-bottom: 20px;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+}
+
+h2{
+  font-weight: 700;
+}
+
+label{
+  font-weight: 700;
+}
+
+.gerenciamento {
+  margin-bottom: 20px;
+}
+
+.convidados .formulario {
+  padding-left: 0;
+  padding-bottom: 0;
+  width: 430px;
+}
+
+.convidados {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+input,
+textarea,
+button {
+  margin-bottom: 15px;
+}
+
+textarea{
+  border: 1px solid black;
+}
+
+input{
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+
+input:focus, textarea:focus
+{
+  border-bottom: 2px solid black;
+  padding: 5px;
+}
+
+#delete {
+  color: rgb(221, 73, 73);
+  background: white;
+  border: none;
+}
+#edit {
+  color: rgb(63, 155, 55);
+  background: white;
+  border: none;
+}

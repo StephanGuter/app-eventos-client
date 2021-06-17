@@ -1,0 +1,41 @@
+* {
+  margin: 0;
+}
+
+h2{
+  font-weight: 700;
+}
+
+.container-fluid {
+  background: white;
+  height: 550px;
+}
+
+#event{
+  border: 1px solid rgb(110, 110, 110);
+}
+
+#event:hover{
+  border: 1px solid black;
+}
+
+td, button {
+  border: none;
+  padding: 5px 15px;
+}
+
+.acoes {
+  color: rgb(255, 255, 255);
+  background-color: white;
+}
+
+#delete {
+  color: rgb(221, 73, 73);
+}
+#edit {
+  color: rgb(63, 155, 55);
+}
+
+#details {
+  color: rgb(82, 165, 180);
+}

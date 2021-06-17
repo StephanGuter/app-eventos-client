@@ -1,0 +1,29 @@
+<div class='container-fluid'>
+  <h2>Eventos</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Local</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of this.eventoService.eventos, index as i">
+        <td>{{this.evento.nome}}</td>
+        <td>{{this.evento.endereco}}</td>
+        <td>{{this.eventoService.getData(this.evento.data)}}</td> 
+        <td>{{this.eventoService.getHorario(this.evento.data)}}</td>
+        <td>
+          <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details">visibility</i></button>
+          <button *ngIf="this.auth.authInfo.isAdmin" class="acoes" (click)="abrirFormularioEvento('editar', i)"><i class="material-icons" id="edit">edit</i></button>
+          <button *ngIf="this.auth.authInfo.isAdmin" class="acoes" (click)="deletar(i)"><i class="material-icons" id="delete">delete</i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+  <button mat-raised-button id="event" (click)="abrirFormularioEvento('criar')">Criar novo evento</button>
+</div>
