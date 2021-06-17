@@ -83,11 +83,15 @@ export class EventosComponent implements OnInit {
               }
             );
           }
+          this.router.navigate(['/branco']);
           this.redirectTo('/eventos');
         });
         this.router.navigate(['/evento']);
       }
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.router.navigate(['/branco']);
+    this.router.navigate(['/eventos']);
+  }
 }

@@ -1,0 +1,27 @@
+<div class='container-fluid'>
+  <h2>Minhas participações</h2>
+
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Nome</th>
+        <th>Local</th>
+        <th>Data</th>
+        <th>Hora</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let evento of this.listaParticipacao, index as i">
+        <td>{{this.evento.nome}}</td>
+        <td>{{this.evento.endereco}}</td>
+        <td>{{this.eventoService.getData(this.evento.data)}}</td> 
+        <td>{{this.eventoService.getHorario(this.evento.data)}}</td>
+        <td>
+          <button class="acoes" (click)="abrirEvento(i)"><i class="material-icons" id="details">visibility</i>Ver</button>
+          <button class="acoes" (click)="desistir(i)"><i class="material-icons" id="delete">delete</i></button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>

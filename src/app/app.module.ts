@@ -15,6 +15,7 @@ import { AuthenticationService } from './authentication.service';
 import { EventoService } from './evento.service';
 
 import { AppComponent } from './app.component';
+import { BrancoComponent } from './branco/branco.component';
 import { HomeComponent } from './home/home.component';
 import { MenuComponent } from './menu/menu.component';
 import { SobreComponent } from './sobre/sobre.component';
@@ -24,6 +25,8 @@ import { EventoComponent } from './evento/evento.component';
 import { FormEventoComponent } from './form-evento/form-evento.component';
 import { TimerService } from './timer.service';
 import { CadastroComponent } from './cadastro/cadastro.component';
+import { ParticipacaoComponent } from './participacao/participacao.component';
+
 
 @NgModule({
   imports: [
@@ -34,7 +37,9 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     HttpClientModule,
     Ng2SearchPipeModule,
     RouterModule.forRoot([
+      { path: 'branco', component: BrancoComponent },
       { path: '', component: HomeComponent },
+      { path: 'participacao', component: ParticipacaoComponent },
       { path: 'eventos', component: EventosComponent },
       { path: 'evento', component: EventoComponent },
       { path: 'form-evento', component: FormEventoComponent },
@@ -44,7 +49,7 @@ import { CadastroComponent } from './cadastro/cadastro.component';
     ])
   ],
   entryComponents: [ ],
-  declarations: [ AppComponent, HomeComponent, MenuComponent, SobreComponent, EventosComponent, LoginComponent, EventoComponent, FormEventoComponent, CadastroComponent ],
+  declarations: [ AppComponent, BrancoComponent, HomeComponent, MenuComponent, SobreComponent, EventosComponent, LoginComponent, EventoComponent, FormEventoComponent, CadastroComponent, ParticipacaoComponent ],
   bootstrap: [ AppComponent ],
   providers: [ EventoService, AuthenticationService, TimerService ]
 })
